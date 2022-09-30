@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 300px;
+  justify-content: space-around;
+}
+
+#header-container {
+  background-color: darkslategrey;
+  display: flex;
+  flex-direction: row;
+  height: 130px;
+  justify-content: space-between;
+  padding: 15px;
+}
