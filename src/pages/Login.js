@@ -17,7 +17,6 @@ class Login extends React.Component {
     const maxPassword = 6;
     const verifyLenght = password.length >= maxPassword;
     const verifyAll = verifyEmail && verifyLenght;
-    console.log(verifyAll);
     if (verifyAll) {
       this.setState({ isBtnDisabled: false });
     } else {

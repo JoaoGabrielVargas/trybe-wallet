@@ -28,3 +28,14 @@ code {
   justify-content: space-between;
   padding: 15px;
 }
+
+#wallet-form {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly ;
+  margin-top: 15px;
+}
+
+#wallet-form input, select {
+  margin-left: 10px;
+}

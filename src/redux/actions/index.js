@@ -1,25 +1,30 @@
 // Coloque aqui suas actions
 export const FORM_LOGIN = 'FORM_LOGIN';
 export const REQUEST_API = 'REQUEST_API';
+export const SAVE_EXPENSES = 'SAVE_EXPENSES';
 
 export const formLogin = (payload) => ({
   type: FORM_LOGIN,
   payload,
 });
 
-export const actGetApi = (payload) => ({ type: REQUEST_API, payload });
+export const actGetApi = (payload, apiRes) => ({ type: REQUEST_API, payload, apiRes });
+export const actSaveExpenses = (payload, totalExpenses) => (
+  { type: SAVE_EXPENSES, payload, totalExpenses });
 
 export const fetchCurrenciesApi = async () => {
   const response = await fetch('https://economia.awesomeapi.com.br/json/all');
   const json = await response.json();
   delete json.USDT;
-  const currencies = Object.entries(json).map((e) => e[0]);
-  return currencies;
+  return json;
 };
 
-export function fetchApi() {
+function fetchApi() {
   return async (dispatch) => {
     const result = await (fetchCurrenciesApi());
-    dispatch(actGetApi(result));
+    const currencies = Object.entries(result).map((e) => e[1]);
+    dispatch(actGetApi(currencies, result));
   };
 }
+
+export { fetchApi };

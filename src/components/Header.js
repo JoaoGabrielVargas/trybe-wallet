@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 class Header extends Component {
   render() {
-    const { email } = this.props;
+    const { email, totalExpenses } = this.props;
+    const fixConverted = Math.round((totalExpenses + Number.EPSILON) * 100) / 100;
     return (
       <header id="header-container">
         <p data-testid="email-field">{ email }</p>
-        <p data-testid="total-field"> 0 </p>
+        <p data-testid="total-field">{fixConverted}</p>
         <p data-testid="header-currency-field"> BRL </p>
       </header>
     );
@@ -19,6 +20,7 @@ function mapStateToProps(state) {
   const { user } = state;
   return {
     email: user.email,
+    totalExpenses: state.wallet.totalExpenses,
   };
 }
 
