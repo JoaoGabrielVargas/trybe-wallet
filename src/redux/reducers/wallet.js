@@ -13,12 +13,11 @@ function wallet(state = INITIAL_STATE, action) {
   case REQUEST_API:
     return {
       ...state,
-      currencies: action.payload,
+      currencies: action.currencyNames,
       apiRes: action.apiRes,
+      currencyArray: action.payload,
     };
   case SAVE_EXPENSES:
-    console.log(action);
-    console.log(state);
     return {
       ...state,
       expenses: [...state.expenses, action.payload],

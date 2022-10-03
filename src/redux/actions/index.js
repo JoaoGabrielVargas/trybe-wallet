@@ -8,7 +8,8 @@ export const formLogin = (payload) => ({
   payload,
 });
 
-export const actGetApi = (payload, apiRes) => ({ type: REQUEST_API, payload, apiRes });
+export const actGetApi = (payload, apiRes, currencyNames) => (
+  { type: REQUEST_API, payload, apiRes, currencyNames });
 export const actSaveExpenses = (payload, totalExpenses) => (
   { type: SAVE_EXPENSES, payload, totalExpenses });
 
@@ -23,7 +24,8 @@ function fetchApi() {
   return async (dispatch) => {
     const result = await (fetchCurrenciesApi());
     const currencies = Object.entries(result).map((e) => e[1]);
-    dispatch(actGetApi(currencies, result));
+    const currencyNames = Object.entries(result).map((e) => e[0]);
+    dispatch(actGetApi(currencies, result, currencyNames));
   };
 }
 
