@@ -5,11 +5,12 @@ import { actDeleteExpense } from '../redux/actions';
 
 class Table extends Component {
   deleteItem = ({ target: { id } }) => {
-    const { dispatch, expenses } = this.props;
+    const { dispatch, expenses, totalExpenses } = this.props;
+    const newExpenses = expenses.filter((element) => Number(element.id) !== Number(id));
     const findElement = expenses.find((element) => Number(element.id) === Number(id));
     const { ask } = findElement.exchangeRates[findElement.currency];
-    const newTotal = ask * findElement.value;
-    const newExpenses = expenses.filter((element) => Number(element.id) !== Number(id));
+    const converted = ask * findElement.value;
+    const newTotal = expenses.length === 1 ? 0 : totalExpenses - converted;
     dispatch(actDeleteExpense(newExpenses, newTotal));
   };
 
@@ -33,10 +34,10 @@ class Table extends Component {
             </tr>
           </thead>
           <tbody>
-            {expenses.map((element, index) => {
+            {expenses.map((element) => {
               const { id } = element;
               return (
-                <tr key={ index }>
+                <tr key={ id }>
                   <td>
                     {element.description}
                   </td>
@@ -73,7 +74,7 @@ class Table extends Component {
                       id={ id }
                       data-testid="delete-btn"
                     >
-                      Deletar
+                      Excluir
                     </button>
                   </td>
                 </tr>
@@ -87,7 +88,6 @@ class Table extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   const { wallet } = state;
   return {
     expenses: wallet.expenses,

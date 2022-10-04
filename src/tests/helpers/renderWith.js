@@ -6,6 +6,7 @@ import { applyMiddleware, createStore } from 'redux';
 import { render } from '@testing-library/react';
 import thunk from 'redux-thunk';
 import rootReducer from '../../redux/reducers';
+import { mockData } from '../../../cypress/mocks/data';
 
 function withRouter(component, history) {
   return (
@@ -38,13 +39,21 @@ export function renderWithRouter(
 
 export function renderWithRedux(component, options = {}) {
   const {
-    initialState = {},
-    store = createStore(rootReducer, initialState, applyMiddleware(thunk)),
+    initialState = {
+      user: { email: 'tryber@gmail.com' },
+      wallet: {
+        currencies: ['USD', 'EUR', 'CAD'],
+        expenses: [],
+        totalExpenses: 0,
+        apiRes: mockData,
+      },
+    },
+    mockStore = createStore(rootReducer, initialState, applyMiddleware(thunk)),
   } = options;
 
   return {
-    ...render(withRedux(component, store)),
-    store,
+    ...render(withRedux(component, mockStore)),
+    mockStore,
   };
 }
 

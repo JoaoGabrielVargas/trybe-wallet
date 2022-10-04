@@ -18,7 +18,7 @@ describe('Testa a página de Wallet', () => {
     renderWithRouterAndRedux(<Wallet />);
     const total = screen.getByTestId('total-field');
     expect(total).toBeInTheDocument();
-    expect(total.innerHTML).toBe('0');
+    expect(total.innerHTML).toBe('0.00');
   });
   test('Verifica se o email é renderizado', () => {
     renderWithRouterAndRedux(<Wallet />);

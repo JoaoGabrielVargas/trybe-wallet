@@ -134,7 +134,6 @@ class WalletForm extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   const { wallet } = state;
   return {
     currencies: wallet.currencies,

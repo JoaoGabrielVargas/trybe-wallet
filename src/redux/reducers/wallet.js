@@ -9,7 +9,6 @@ const INITIAL_STATE = {
 };
 
 function wallet(state = INITIAL_STATE, action) {
-  console.log(action);
   switch (action.type) {
   case REQUEST_API:
     return {
