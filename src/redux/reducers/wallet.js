@@ -1,5 +1,5 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { REQUEST_API, SAVE_EXPENSES } from '../actions';
+import { REQUEST_API, SAVE_EXPENSES, DELETE_EXPENSE } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -9,6 +9,7 @@ const INITIAL_STATE = {
 };
 
 function wallet(state = INITIAL_STATE, action) {
+  console.log(action);
   switch (action.type) {
   case REQUEST_API:
     return {
@@ -23,6 +24,13 @@ function wallet(state = INITIAL_STATE, action) {
       expenses: [...state.expenses, action.payload],
       totalExpenses: action.totalExpenses,
     };
+  case DELETE_EXPENSE:
+    return {
+      ...state,
+      expenses: action.payload,
+      totalExpenses: action.newTotal,
+    };
+
   default:
     return state;
   }

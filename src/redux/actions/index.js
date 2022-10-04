@@ -2,6 +2,7 @@
 export const FORM_LOGIN = 'FORM_LOGIN';
 export const REQUEST_API = 'REQUEST_API';
 export const SAVE_EXPENSES = 'SAVE_EXPENSES';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const formLogin = (payload) => ({
   type: FORM_LOGIN,
@@ -19,6 +20,10 @@ export const fetchCurrenciesApi = async () => {
   delete json.USDT;
   return json;
 };
+
+export const actDeleteExpense = (payload, newTotal) => (
+  { type: DELETE_EXPENSE, payload, newTotal }
+);
 
 function fetchApi() {
   return async (dispatch) => {
