@@ -11,7 +11,7 @@ describe('Testa o componente table', () => {
     expect(tableTitle).toBeInTheDocument();
   });
 
-  test('Verifica se o componente é possível adicionar despesa', () => {
+  test('Verifica se é possível adicionar despesa', () => {
     const { mockStore } = renderWithRouterAndRedux(<Wallet />, ['/carteira']);
 
     const input = screen.getByTestId('value-input');
