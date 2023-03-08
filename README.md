@@ -15,7 +15,8 @@ Nessa aplicação o usuário:
 
 ## Técnologias usadas
 
-> HTML, Javascript,REACT, Redux, React Testing Library
+> HTML, Javascript,REACT, Redux, React Testing Library. 
+> Esse projeto foi feito utilizando componentes de classe no React, para fins educativos.
 
 ## Instalando Dependências
 
