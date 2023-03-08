@@ -1,13 +1,30 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Trybetunes
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## 👨‍💻 Contexto
+Este projeto faz uma chamada a API do Itunes e retorna a lista de músicas de cada álbum, artistas, com opção de escutar prévias das músicas e favoritar.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Nessa aplicação o usuário:
+
+- Faz login;
+- Pesquisa por um artista;
+- A aplicação lista os álbuns disponíveis desse ou artista;
+- Lista as músicas do álbum selecionado;
+- Reproduz uma prévia das músicas deste álbum;
+- Favorita e desfavorita músicas;
+- Ve a lista de músicas favoritas;
+
+## Técnologias usadas
+
+> HTML, Javascript,REACT
+
+## Instalando Dependências
+
+```bash
+npm install
+``` 
+
+## Executando aplicação
+
+```bash
+npm start
+```
