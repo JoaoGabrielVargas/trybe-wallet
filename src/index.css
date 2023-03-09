@@ -18,6 +18,7 @@ code {
   height: 200px;
   width: 300px;
   justify-content: space-around;
+  margin: auto;
 }
 
 #header-container {
@@ -38,4 +39,11 @@ code {
 
 #wallet-form input, select {
   margin-left: 10px;
+}
+
+table, th, td {
+  border: 1px solid #333;
+  border-collapse: collapse;
+  padding: 15px;
+
 }
