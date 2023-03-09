@@ -1,21 +1,22 @@
-# Trybetunes
+# TrybeWallet - sua carteira virtual!
 
 ## 👨‍💻 Contexto
-Este projeto faz uma chamada a API do Itunes e retorna a lista de músicas de cada álbum, artistas, com opção de escutar prévias das músicas e favoritar.
+O projeto TrybeWallet é uma carteira virtual para controle de gastos em viagens internacionais, ou outras transações que envolvem moedas estrangeiras. A aplicação faz uma chamada pra API https://economia.awesomeapi.com.br/json/all, que retorna a cotação atual da moeda selecionada e faz a conversão em real, com um espaço para colocar as informações de cada gasto registrado na carteira. Controle suas finanças!
 
 Nessa aplicação o usuário:
 
 - Faz login;
-- Pesquisa por um artista;
-- A aplicação lista os álbuns disponíveis desse ou artista;
-- Lista as músicas do álbum selecionado;
-- Reproduz uma prévia das músicas deste álbum;
-- Favorita e desfavorita músicas;
-- Ve a lista de músicas favoritas;
+- Insere o valor do gasto;
+- Insere a descrição do gasto;
+- Seleciona uma moeda para conversão;
+- Seleciona o método que foi realizado o pagamento - débito/crédito/dinheiro;
+- Seleciona uma categoria para organizar melhor seus gastos - alimentação/lazer/trabalho/saúde;
+- Adiciona o gasto em uma tabela.
 
 ## Técnologias usadas
 
-> HTML, Javascript,REACT
+> HTML, Javascript,REACT, Redux, React Testing Library. 
+> Esse projeto foi feito utilizando componentes de classe no React, para fins educativos.
 
 ## Instalando Dependências
 
